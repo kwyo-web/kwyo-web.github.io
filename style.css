@@ -18,6 +18,10 @@ footer > p {
     margin-bottom: 8px;
 }
 
+strong {
+    font-size: large;
+}
+
 .red {
     color: red;
 }
@@ -35,6 +39,10 @@ footer > p {
     padding: 0px 32px;
     font-size: smaller;
     color: gray;
+}
+
+.afterimg {
+    margin-top: 8px;
 }
 
 /* css related to the navbar. see licence in index.html*/
