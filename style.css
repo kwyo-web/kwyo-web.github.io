@@ -56,18 +56,6 @@ strong {
     display: flex;
     align-items: center;
 }
-
-.navBar u1{
-    list-style-type: none;
-    background-color: gray;
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;   
-}
-
-.navBar li{
-    float: left;
-}
   
 /*Floats each item to the left with padding of 14 & 16 px.
 Removes the underline with text decoration = none.*/
