@@ -8,14 +8,21 @@ body {
 
 footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-bottom: 32px;
+    padding-bottom: 60;
+    padding-top: 40;
+    background-color: black;
 }
 
 footer > p {
-    margin-bottom: 8px;
+    margin-left: 50;
+}
+
+footer > a {
+    margin-left: 50;
+    margin-bottom: 10;
 }
 
 strong {
@@ -26,6 +33,11 @@ strong {
     color: red;
 }
 
+/* ALL h2s will have no bottom margins*/
+h2 {
+    margin-bottom: 0;
+}
+
 .banner {
     display: flex;
     flex-direction: column;
@@ -33,8 +45,10 @@ strong {
 }
 
 .banner > img {
+    padding-top: 92;
     max-width: 100vw;
 }
+
 .banner > p {
     padding: 0px 32px;
     font-size: smaller;
@@ -48,19 +62,33 @@ strong {
 /* css related to the navbar. see licence in index.html*/
 
 .nav-container {
+    position: fixed;
     display: grid; /*hacky way to get it to work as a block with the underlying positions*/
 }
 
 .navBar{
-    background-color: #fff;  
+    background-color: #fff; 
     display: flex;
     align-items: center;
+    padding: 14px 16px;
 }
+
+/*
+.navBar u1{
+    list-style-type: none;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;   
+}
+
+.navBar li{
+    float: left;
+}*/
   
 /*Floats each item to the left with padding of 14 & 16 px.
 Removes the underline with text decoration = none.*/
-.navBar a {
-    float: left;
+/*.navBar a {
     color: grey;
     padding: 14px 16px;
     text-decoration: none;
@@ -69,6 +97,7 @@ Removes the underline with text decoration = none.*/
 }
 
 /*Background color change during hover state*/
+
 .navBar a:hover{
     background-color: white;
     color: #009cde;
@@ -77,6 +106,67 @@ Removes the underline with text decoration = none.*/
 /*Hides the menu Icon which will show when the nav needs to be responsive*/
 .navBar .icon{
     display: none;
+}
+
+.dropdown button {
+    background-color: white;
+    color: gray;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: 'Gabarito', sans-serif;
+}
+
+.dropdown a{
+    display: block;
+    color: gray;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-family: 'Gabarito', sans-serif;
+}
+
+.dropdown .content{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+.dropdown:hover button {
+    color: #009cde;
+    text-decoration: underline;
+}
+
+.bottom-container {
+    display: grid;
+}
+
+.bottom-nav u1 {
+    list-style-type: none;
+    background-color: blue;
+    padding: 0px;
+    margin: 0px;
+}
+
+.bottom-nav a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Gabarito', sans-serif;
+    text-align: center;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
 }
 
 /*Set your custom screen width here replacing 700*/
