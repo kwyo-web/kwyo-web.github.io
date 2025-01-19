@@ -18,6 +18,15 @@ footer > p {
     margin-bottom: 8px;
 }
 
+#container{
+    overflow: auto;
+}
+
+#floated{
+    float: left;
+    width: 210px;
+}
+
 /*footer {
     display: flex;
     flex-direction: row;
