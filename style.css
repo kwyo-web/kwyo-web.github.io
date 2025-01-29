@@ -43,6 +43,10 @@ footer > p {
     clear: both;
 }
 
+a {
+    color: black;
+}
+
 /* Bottom left text */
 /*.bottom {
   position: absolute;
