@@ -1,5 +1,5 @@
 html {
-    font-family: 'Gabarito', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -42,6 +42,15 @@ footer > p {
     display: table;
     clear: both;
 }
+
+/* Bottom left text */
+/*.bottom {
+  position: absolute;
+  bottom: 40%;
+  left: 10;
+  color: white;
+  text-align: center;
+}*/
 
 /*footer {
     display: flex;
