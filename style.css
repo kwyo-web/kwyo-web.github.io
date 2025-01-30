@@ -47,6 +47,20 @@ a {
     color: black;
 }
 
+ul li {
+    margin-bottom: 15px;
+}
+
+.bigmargins {
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 20px;
+}
+
+.spacedlines {
+    line-height: 2;
+}
+
 /* Bottom left text */
 /*.bottom {
   position: absolute;
@@ -238,6 +252,11 @@ and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
     display: block;
     text-align: left;
   }
+  .bigmargins {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    }
 }
 
 /*Set your custom screen width here replacing 700*/
