@@ -4,6 +4,7 @@ html {
 
 body {
     margin: 0;
+    font-weight: 300;
 }
 
 footer {
@@ -46,6 +47,10 @@ footer > p {
 a {
     color: black;
 }
+
+/*h1 {
+    margin-bottom: 0;
+}*/
 
 ul li {
     margin-bottom: 15px;
