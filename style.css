@@ -61,6 +61,46 @@ ul li {
     line-height: 2;
 }
 
+.title1 {
+    position: absolute;
+    top: 140px;
+    left: 16px;
+    color: black;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.title2 {
+    position: absolute;
+    top: 190px;
+    left: 16px;
+    color: red;
+    font-size: 75px;
+    font-weight: bold;
+}
+
+.clearbox {
+    position: absolute;
+    top: 125px;
+    left: 0px;
+    background-color: white;
+    font-size: 50px;
+    font-weight: bold;
+    width: 450px;
+    padding: 80px;
+    opacity: 0.5;
+}
+
+.textbox {
+    position: relative;
+    bottom: 100px;
+    left: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 /* Bottom left text */
 /*.bottom {
   position: absolute;
@@ -129,6 +169,7 @@ h2 {
     position: fixed;
     display: grid; /*hacky way to get it to work as a block with the underlying positions*/
     width: 100%;
+    z-index: 999;
 }
 
 .navBar{
@@ -239,9 +280,9 @@ Removes the underline with text decoration = none.*/
 /* some stuff under here from https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
 and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
 
-/* The "responsive" class is added to the navBar with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .navBar.responsive {position: relative;}
+/*Set your custom screen width here replacing 700*/
+@media screen and (max-width: 700px){
+    .navBar.responsive {position: relative;}/* The "responsive" class is added to the navBar with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
   .navBar.responsive a.icon {
     position: absolute;
     right: 0;
@@ -257,10 +298,35 @@ and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
     margin-right: 10px;
     font-size: 16px;
     }
-}
+    .title1 {
+        position: absolute;
+        top: 140px;
+        left: 16px;
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+    }
 
-/*Set your custom screen width here replacing 700*/
-@media screen and (max-width: 700px){
+    .title2 {
+        position: absolute;
+        top: 170px;
+        left: 16px;
+        color: red;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .clearbox {
+        position: absolute;
+        top: 125px;
+        left: 0px;
+        background-color: white;
+        font-size: 50px;
+        font-weight: bold;
+        width: 300px;
+        padding: 55px;
+        opacity: 0.5;
+    }
     /*.navBar {
         justify-content: space-between;
     }*/
