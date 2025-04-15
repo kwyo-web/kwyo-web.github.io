@@ -8,6 +8,158 @@
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="script.js"></script>
+    <script src="button.js"></script>
+    <script>
+    // Function to create the plus/minus icon for all buttons
+    function addPlusMinusIcons() {
+      const buttons = document.querySelectorAll('button.expand-button');
+      
+      buttons.forEach(button => {
+        // Only add if it doesn't already have the icon
+        if (!button.querySelector('.icon-container')) {
+          const iconContainer = document.createElement('div');
+          iconContainer.className = 'icon-container';
+          
+          const horizontalBar = document.createElement('div');
+          horizontalBar.className = 'horizontal-bar';
+          
+          const verticalBar = document.createElement('div');
+          verticalBar.className = 'vertical-bar';
+          
+          iconContainer.appendChild(horizontalBar);
+          iconContainer.appendChild(verticalBar);
+          
+          button.appendChild(iconContainer);
+        }
+      });
+    }
+
+    // Updated toggle function with plus/minus icon animation
+    function toggleTextBox(buttonId, textBoxId) {
+      const textBox = document.getElementById(textBoxId);
+      const button = document.getElementById(buttonId);
+      
+      if (!textBox || !button) {
+        console.error(`Element not found`);
+        return;
+      }
+      
+      if (textBox.style.display === "none" || getComputedStyle(textBox).display === "none") {
+        textBox.style.display = "block"; // Show the text box
+        button.classList.add("active"); // Add active class for minus sign
+      } else {
+        textBox.style.display = "none"; // Hide the text box
+        button.classList.remove("active"); // Remove active class for plus sign
+      }
+    }
+
+    // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      // Add plus/minus icons to all buttons
+      addPlusMinusIcons();
+      
+      // Add event listeners for each button
+      const button1 = document.getElementById("button1");
+      const button2 = document.getElementById("button2");
+      const button3 = document.getElementById("button3");
+      const button4 = document.getElementById("button4");
+      
+      if (button1) {
+        button1.addEventListener("click", function() {
+          toggleTextBox("button1", "invisible1");
+        });
+      }
+      
+      if (button2) {
+        button2.addEventListener("click", function() {
+          toggleTextBox("button2", "invisible2");
+        });
+      }
+      
+      if (button3) {
+        button3.addEventListener("click", function() {
+          toggleTextBox("button3", "invisible3");
+        });
+      }
+      
+      if (button4) {
+        button4.addEventListener("click", function() {
+          toggleTextBox("button4", "invisible4");
+        });
+      }
+    });
+  </script>
+    <style>
+      /* Improved button styles with better animation */
+      button.expand-button {
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: 0;
+        font-size: clamp(20px, 2vw, 25px);
+        font-weight: normal;
+        background-color: #f2f2f2;
+        border: none;
+        width: 100%;
+        max-width: 1500px;
+        height: auto;
+        min-height: 50px;
+        text-align: left;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease;
+        position: relative;
+        cursor: pointer;
+      }
+
+      button.expand-button:hover {
+        background-color: lightgray;
+      }
+
+      /* Icon container with improved positioning */
+      button.expand-button .icon-container {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+      }
+
+      /* Creating plus symbol with smoother lines */
+      button.expand-button .horizontal-bar, 
+      button.expand-button .vertical-bar {
+        position: absolute;
+        background-color: #333;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      /* Horizontal bar (present in both + and -) */
+      button.expand-button .horizontal-bar {
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      /* Vertical bar (only in +) */
+      button.expand-button .vertical-bar {
+        width: 2px;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Animation for the minus state with improved transition */
+      button.expand-button.active .vertical-bar {
+        transform: translateX(-50%) rotate(90deg);
+        opacity: 0;
+      }
+
+      /* Optional: Add a subtle rotation to the horizontal bar */
+      button.expand-button.active .horizontal-bar {
+        transform: translateY(-50%) rotate(180deg);
+      }
+  </style>
   </head>
   <body>
     <!-- navbar from codepen (licence): 
@@ -97,9 +249,10 @@
       To prepare orchestral excerpts, we recommend listening to recordings and consulting your private instructor or ensemble leader.
       </p>
 
-
       <hr>
-      <h5>PRELUDIUM STRINGS</h5>
+      <button id="button1" class="expand-button">PRELUDIUM STRINGS</button>
+
+      <div id="invisible1" class="text-body" style="display:none;">
 
       <p>Entry level string orchestra. Suggested minimum age: 6 years old. To join our entry-level string orchestra, a candidate should have been taking private music lessons for about a year and have a basic understanding of music notation. Suggested opening skill level RCM* 1 or its equivalent in Suzuki.</p>
 
@@ -119,9 +272,13 @@
 
       <p><em>* Royal Conservatory of Music</em></p>
 
+    </div>
+
 
       <hr>
-      <h5>YOUTH STRINGS</h5>
+      <button id="button2" class="expand-button">YOUTH STRINGS</button>
+
+      <div id="invisible2" class="text-body" style="display:none;">
 
       <p>Junior level strings orchestra. Suggested minimum age: 8 years old. Instruments: violin, viola, cello and double bass. Opening skill level RCM* 3 or its equivalent in Suzuki.</p>
 
@@ -158,9 +315,13 @@
 
       <p><em>* Royal Conservatory of Music</em></p>
 
+      </div>
+
 
       <hr>
-      <h5>YOUTH SINFONIA</h5>
+      <button id="button3" class="expand-button">YOUTH SINFONIA</button>
+
+      <div id="invisible3" class="text-body" style="display:none;">
 
       <p>Intermediate level string & wind (NEW) orchestra. Suggested minimum age: 10 years old.</p>
 
@@ -241,8 +402,12 @@
         </ul>
       </ul>
 
+    </div>
+
       <hr>
-      <h5>YOUTH ORCHESTRA</h5>
+      <button id="button4" class="expand-button">YOUTH ORCHESTRA</button>
+
+      <div id="invisible4" class="text-body" style="display:none;">
 
       <p>Advanced level symphony orchestra. Suggested minimum age: 12 years old.</p>
 
@@ -437,6 +602,8 @@
         <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves</li>
         <li>A solo piece of candidate's choice (1-2 minutes long) that best demonstrates their current skill level</li>
       </ul>
+
+    </div>
 
       <hr>
 
