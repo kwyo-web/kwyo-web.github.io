@@ -307,6 +307,21 @@ h5 {
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: -30px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.banner picture {
+    display: block;
+    width: 100%;
+    margin-top: 91px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .banner > img {
@@ -452,7 +467,11 @@ and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
     margin-right: 10px;
     font-size: 16px;
     }
-    .title1 {
+
+    .title1, .title2, .clearbox {
+        display: none;
+    }
+    /*.title1 {
         position: absolute;
         top: 140px;
         left: 16px;
@@ -480,7 +499,7 @@ and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
         width: 300px;
         padding: 55px;
         opacity: 0.5;
-    }
+    }*/
     /*.navBar {
         justify-content: space-between;
     }*/
