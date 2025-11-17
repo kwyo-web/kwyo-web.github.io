@@ -566,3 +566,8 @@ and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
 .content {
     padding: 0px 16px;
 }
+
+.concert-flexbox {
+    display: flex;
+    justify-content: space-around;
+}
