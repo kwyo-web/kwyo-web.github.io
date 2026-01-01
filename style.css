@@ -1,573 +1,957 @@
+/* ============================================
+   PROFESSIONAL KWYO WEBSITE DESIGN
+   ============================================ */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     margin: 0;
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #2c3e50;
+    background-color: #ffffff;
+    font-size: 16px;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 32px;
-    padding-left: 10px;
-    padding-right:10px;
-}
+/* ============================================
+   NAVIGATION - PROFESSIONAL ENHANCEMENT
+   ============================================ */
 
-footer > p {
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-#container{
-    overflow: auto;
-}
-
-#floated{
-    float: left;
-    width: 210px;
-}
-
-/* used https://www.w3schools.com/howto/howto_css_two_columns.asp for columns*/
-.column {
-    float: left;
-    width: 50%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-a {
-    color: black;
-}
-
-h1 {
-    margin-bottom: 0;
-    font-size: 40px;
-}
-
-ul li {
-    margin-bottom: 15px;
-}
-
-.bigmargins {
-    margin-left: 100px;
-    margin-right: 100px;
-    font-size: 20px;
-}
-
-.spacedlines {
-    line-height: 2;
-}
-
-.title1 {
-    position: absolute;
-    top: 140px;
-    left: 16px;
-    color: black;
-    font-size: 45px;
-    font-weight: bold;
-}
-
-.title2 {
-    position: absolute;
-    top: 190px;
-    left: 16px;
-    color: red;
-    font-size: 75px;
-    font-weight: bold;
-}
-
-.clearbox {
-    position: absolute;
-    top: 125px;
-    left: 0px;
-    background-color: white;
-    font-size: 50px;
-    font-weight: bold;
-    width: 450px;
-    padding: 80px;
-    opacity: 0.5;
-}
-
-.textbox {
-    position: relative;
-    bottom: 100px;
-    left: 20px;
-    background-color: black;
-    color: white;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.orchestraheader {
-    font-size: 200px;
-}
-
-/* Bottom left text */
-/*.bottom {
-  position: absolute;
-  bottom: 40%;
-  left: 10;
-  color: white;
-  text-align: center;
-}*/
-
-/*footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 60;
-    padding-top: 40;
-    background-color: black;
-}
-
-footer > p {
-    margin-left: 50;
-}
-
-footer > a {
-    margin-left: 50;
-    margin-bottom: 10;
-}
-*/
-
-/* Enhanced navigation styling */
 .nav-container {
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 6.5px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navBar {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
-/* Logo sizing */
 .navBar img {
-  height: 50px;
-  margin-right: 1.5rem;
+    height: 52px;
+    margin-right: 3rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dropdown containers */
+.navBar img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
 .dropdown {
-  position: relative;
-  margin: 0 0.75rem;
+    position: relative;
+    margin: 0 0.25rem;
 }
 
-/* Navbar buttons styling */
 .dropdown button {
-  background: transparent;
-  border: none;
-  color: #333;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 1rem 0.75rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    background: transparent;
+    border: none;
+    color: #2c3e50;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding: 0.875rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.dropdown button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background-color: #c91c22;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown:hover button::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
 .dropdown button:hover {
-  color: #c91c22; /* Red color to match KWYO branding */
+    color: #c91c22;
 }
 
-/* Dropdown content styling */
 .dropdown .content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-  border-radius: 4px;
-  overflow: hidden;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 260px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .dropdown:hover .content {
-  display: block;
+    display: block;
+    animation: fadeInDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: transparent;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dropdown .content a {
-  color: #333;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
+    color: #2c3e50;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 3px solid transparent;
+    position: relative;
 }
 
 .dropdown .content a:hover {
-  background-color: #f5f5f5;
-  color: #c91c22;
+    background: linear-gradient(90deg, rgba(201, 28, 34, 0.05) 0%, rgba(201, 28, 34, 0.02) 100%);
+    color: #c91c22;
+    border-left-color: #c91c22;
+    padding-left: 1.75rem;
 }
 
-/* Mobile menu icon */
 .icon {
-  display: none;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-/* Media query for responsive design */
-@media screen and (max-width: 700px) {
-  .navBar {
-    flex-wrap: wrap;
-  }
-  
-  .navBar a:not(:first-child), .dropdown {
     display: none;
-  }
-  
-  .icon {
-    display: block;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-  
-  .navBar.responsive {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .navBar.responsive .icon {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-  
-  .navBar.responsive .dropdown {
-    display: block;
-    width: 100%;
-    margin: 0;
-  }
-  
-  .navBar.responsive .dropdown button {
-    width: 100%;
-    text-align: left;
-    padding: 1rem;
-  }
-  
-  .navBar.responsive .dropdown .content {
-    position: relative;
-    box-shadow: none;
-    width: 100%;
-  }
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-left: auto;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
 }
 
-
-
-.red {
-    color: red;
+.icon:hover {
+    color: #c91c22;
 }
 
-/* ALL h2s will have no bottom margins*/
-h2 {
-    margin-bottom: 0;
-}
-
-h3 {
-    margin-bottom: -15px;
-    margin-top: 10px;
-    font-size: 22px;
-    font-weight: normal;
-}
-
-h4 {
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 30px;
-    font-weight: normal;
-}
-
-h5 {
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 25px;
-    font-weight: normal;
-}
+/* ============================================
+   BANNER / HERO SECTION - PROFESSIONAL
+   ============================================ */
 
 .banner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-bottom: -30px;
+    position: relative;
     width: 100%;
-    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
     overflow: hidden;
+    background: #1a1a1a;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0.1) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at left center, rgba(201, 28, 34, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .banner picture {
     display: block;
     width: 100%;
-    margin-top: 91px;
+    position: relative;
+    z-index: 0;
 }
 
-.banner img {
+.banner picture img,
+.banner > img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-}
-
-.banner > img {
-    padding-top: 92;
-    max-width: 100vw;
+    object-fit: cover;
+    min-height: 600px;
+    max-height: 800px;
+    object-position: center;
 }
 
 .banner > p {
-    padding: 0px 32px;
-    font-size: smaller;
-    color: gray;
+    padding: 1.5rem 3rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-align: right;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+    margin: 0;
+    position: relative;
+    z-index: 3;
+    font-style: italic;
+    letter-spacing: 0.4px;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.afterimg {
-    margin-top: 8px;
+.title1 {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-70%);
+    color: #ffffff;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 4px 16px rgba(0, 0, 0, 0.5), 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    animation: fadeInUpTitle1 0.8s ease-out;
 }
 
-/* css related to the navbar. see licence in index.html*/
-
-.nav-container {
-    position: fixed;
-    display: grid; /*hacky way to get it to work as a block with the underlying positions*/
-    width: 100%;
-    z-index: 999;
+.title2 {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(0%);
+    color: #c91c22;
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    animation: fadeInUpTitle2 1s ease-out 0.2s both;
 }
 
-.navBar{
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 14px 16px;
+@keyframes fadeInUpTitle1 {
+    from {
+        opacity: 0;
+        transform: translateY(-70%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-70%) translateY(0);
+    }
 }
 
-/*
-.navBar u1{
-    list-style-type: none;
-    background-color: white;
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;   
+@keyframes fadeInUpTitle2 {
+    from {
+        opacity: 0;
+        transform: translateY(0%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0%) translateY(0);
+    }
 }
 
-.navBar li{
-    float: left;
-}*/
-  
-/*Floats each item to the left with padding of 14 & 16 px.
-Removes the underline with text decoration = none.*/
-/*.navBar a {
-    color: grey;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: 'Gabarito', sans-serif;
-}
-
-/*Background color change during hover state*/
-
-/*Hides the menu Icon which will show when the nav needs to be responsive*/
-.navBar .icon{
+.clearbox {
     display: none;
 }
 
-.dropdown button1 {
-    background-color: white;
-    color: gray;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    font-family: 'Gabarito', sans-serif;
-}
-
-.dropdown a{
-    display: block;
-    color: gray;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 17px
-    font-family: 'Gabarito', sans-serif;
-}
-
-.dropdown .content{
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 100px;
-    box-shadow: 2px 2px 5px black;
-}
-
-.dropdown:hover .content {
-    display: block;
-}
-
-.dropdown:hover button1 {
-    color: #009cde;
-    text-decoration: underline;
-}
-
-.bottom-container {
-    display: grid;
-}
-
-.bottom-nav u1 {
-    list-style-type: none;
-    background-color: blue;
-    padding: 0px;
-    margin: 0px;
-}
-
-.bottom-nav a{
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 16px;
-    font-family: 'Gabarito', sans-serif;
-    text-align: center;
-}
-
-.bottom-nav a:hover {
-    text-decoration: underline;
-}
-
-/* some stuff under here from https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
-and some from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
-
-/*Set your custom screen width here replacing 700*/
-@media screen and (max-width: 700px){
-    .navBar.responsive {position: relative;}/* The "responsive" class is added to the navBar with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  .navBar.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .navBar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .bigmargins {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-    }
-
-    .title1, .title2, .clearbox {
-        display: none;
-    }
-    /*.title1 {
-        position: absolute;
-        top: 140px;
-        left: 16px;
-        color: black;
-        font-size: 30px;
-        font-weight: bold;
-    }
-
-    .title2 {
-        position: absolute;
-        top: 170px;
-        left: 16px;
-        color: red;
-        font-size: 50px;
-        font-weight: bold;
-    }
-
-    .clearbox {
-        position: absolute;
-        top: 125px;
-        left: 0px;
-        background-color: white;
-        font-size: 50px;
-        font-weight: bold;
-        width: 300px;
-        padding: 55px;
-        opacity: 0.5;
-    }*/
-    /*.navBar {
-        justify-content: space-between;
-    }*/
-    /* Style the navigation menu */
-    /*.navBar {
-      overflow: hidden;
-      position: relative;
-    }*/
-    /* Add a grey background color on mouse-over
-    .navBar a:hover {
-      background-color: #ddd;
-      color: black;
-    }*/
-    /* Style navigation menu links */
-    .navBar a {
-      text-decoration: none;
-      font-size: 20px; /* size of icon */
-      display: block;
-    }
-    /*Ignores the first link (which is Home) in the div and applies 'display = none' to everything else. Basically hiding everything but Home*/
-    .dropdown {
-        display: none;
-    }
-    /*.navBar a:not(:first-child){
-        display: none;
-    }*/
-    /*Brings the menu icon into view and floats it to the right*/
-    .navBar a.icon{
-        display: block; 
-        float: right;
-        position: absolute;
-        right: 4;
-        top: 20;
-        padding: 14px 16px;
-    }
-
-    /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
-    .navBar.responsive {
-        position: relative;
-        flex-direction: column;
-        align-items: start;
-        .dropdown {
-            display: block;
-        }
-    }
-    .navBar.responsive a.icon {
-        position: absolute;
-        right: 4;
-        top: 20;
-    }
-
-    /*Removes the originally set float and brings them to view*/
-    .navBar.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .content {
-        padding: 0px 64px;
-    }
-}
+/* ============================================
+   CONTENT AREA - PROFESSIONAL SPACING
+   ============================================ */
 
 .content {
-    padding: 0px 16px;
+    padding: 6rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #ffffff;
 }
+
+.bigmargins {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: #4b5563;
+}
+
+.bigmargins p {
+    margin-bottom: 1.75rem;
+    color: #4b5563;
+    font-weight: 400;
+}
+
+.bigmargins p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   TYPOGRAPHY - PROFESSIONAL REFINEMENT
+   ============================================ */
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 700;
+    color: #1f2937;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+
+h1.afterimg {
+    margin-top: 0;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+}
+
+h3 {
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+}
+
+h3 a {
+    color: #1f2937;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h3 a:hover {
+    color: #c91c22;
+}
+
+h4 {
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.3;
+}
+
+h5 {
+    margin-bottom: 0.75rem;
+    margin-top: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.4;
+}
+
+.red {
+    color: #c91c22;
+    font-weight: 600;
+}
+
+a {
+    color: #c91c22;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+a:hover {
+    color: #a0151a;
+    text-decoration: underline;
+}
+
+/* ============================================
+   LAYOUT COMPONENTS
+   ============================================ */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 2.5rem 0;
+}
+
+.column {
+    flex: 1;
+    min-width: 280px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 4rem 0;
+}
+
+/* ============================================
+   ORCHESTRA GRID - PROFESSIONAL CARDS
+   ============================================ */
+
+.orchestras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin: 4rem 0;
+}
+
+@media screen and (max-width: 700px) {
+    .orchestras-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.orchestra-card {
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f3f4f6;
+    position: relative;
+    overflow: hidden;
+}
+
+.orchestra-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #c91c22;
+    transform: scaleY(0);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top;
+}
+
+.orchestra-card:hover::before {
+    transform: scaleY(1);
+}
+
+.orchestra-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #e5e7eb;
+}
+
+.orchestra-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+.orchestra-card p {
+    color: #6b7280;
+    margin-bottom: 0;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+}
+
+.row .column {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f3f4f6;
+}
+
+.row .column:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.row .column h3 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.row .column p {
+    color: #6b7280;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+ul {
+    margin: 1.75rem 0;
+    padding-left: 2.25rem;
+}
+
+ul li {
+    margin-bottom: 0.875rem;
+    line-height: 1.75;
+    color: #4b5563;
+}
+
+.list ul {
+    margin: 1.25rem 0;
+}
+
+/* ============================================
+   CONCERT FLEXBOX
+   ============================================ */
 
 .concert-flexbox {
     display: flex;
-    justify-content: space-around;
+    gap: 4rem;
+    align-items: flex-start;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.concert-ls {
+    flex: 1;
+    min-width: 300px;
+}
+
+.concert-flexbox img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   FOOTER - PROFESSIONAL DESIGN
+   ============================================ */
+
+footer {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%);
+    color: #ffffff;
+    padding: 5rem 3rem 3.5rem;
+    margin-top: 6rem;
+    text-align: center;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+footer > p {
+    margin-bottom: 1.75rem;
+    text-align: center;
+    color: #d1d5db;
+    line-height: 1.85;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+}
+
+footer > p.youtube-link {
+    text-align: center !important;
+    margin: 1.75rem 0 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+footer > p.youtube-link a {
+    text-align: center !important;
+    display: inline !important;
+    margin: 0 auto !important;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+footer > p:first-child {
+    font-size: 1.1875rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-weight: 500;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #c91c22;
+    text-decoration: none;
+}
+
+footer strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Footer sponsor logos */
+footer > div.sponsor-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+    margin: 4rem auto;
+    padding: 3.5rem 5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 20px;
+    max-width: 1000px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+footer .sponsor-logo {
+    opacity: 1;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 2.75rem;
+    border-radius: 16px;
+    display: block;
+    filter: none;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+footer .sponsor-logo:first-of-type {
+    max-width: 300px;
+    max-height: 140px;
+}
+
+footer .sponsor-logo:last-of-type {
+    max-width: 380px;
+    max-height: 100px;
+}
+
+footer .sponsor-logo:hover {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.04);
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media screen and (max-width: 900px) {
+    .bigmargins {
+        font-size: 1.0625rem;
+        padding: 0 1.5rem;
+    }
+
+    .content {
+        padding: 4rem 2rem;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .concert-flexbox {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    footer > div {
+        gap: 3rem;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navBar {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .navBar img {
+        height: 44px;
+        margin-right: 1.5rem;
+    }
+
+    .navBar a:not(:first-child), 
+    .dropdown {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .navBar.responsive {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+    }
+
+    .navBar.responsive .icon {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+    }
+
+    .navBar.responsive .dropdown {
+        display: block;
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    .navBar.responsive .dropdown button {
+        width: 100%;
+        text-align: left;
+        padding: 1rem 1.25rem;
+        font-size: 0.9375rem;
+    }
+
+    .navBar.responsive .dropdown .content {
+        position: relative;
+        box-shadow: none;
+        width: 100%;
+        margin-top: 0;
+        border-radius: 0;
+        border: none;
+        background-color: #f9fafb;
+    }
+
+    .navBar.responsive .dropdown .content a {
+        padding: 0.875rem 1.5rem;
+        border-left: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .navBar.responsive .dropdown .content a:hover {
+        padding-left: 1.5rem;
+        background-color: #f3f4f6;
+    }
+
+    .banner {
+        margin-top: 0;
+    }
+
+    .banner picture img,
+    .banner > img {
+        min-height: 400px;
+        max-height: 500px;
+    }
+
+    .title1 {
+        left: 5%;
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        transform: translateY(-65%);
+    }
+
+    .title2 {
+        left: 5%;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        transform: translateY(0%);
+    }
+
+    .banner > p {
+        padding: 1.25rem 1.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .orchestras-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+    }
+
+    .orchestra-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .orchestra-card h3 {
+        font-size: 1.375rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .orchestra-card p {
+        font-size: 1rem;
+    }
+
+    footer > div.sponsor-logos {
+        gap: 2.5rem;
+        padding: 2rem 1.5rem;
+        margin: 2.5rem auto;
+    }
+
+    footer .sponsor-logo {
+        padding: 2rem;
+    }
+
+    footer .sponsor-logo:first-of-type {
+        max-width: 250px;
+        max-height: 120px;
+    }
+
+    footer .sponsor-logo:last-of-type {
+        max-width: 320px;
+        max-height: 85px;
+    }
+
+    .content {
+        padding: 3rem 1.5rem;
+    }
+
+    .bigmargins {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1.0625rem;
+        padding: 0;
+    }
+
+    .bigmargins p {
+        margin-bottom: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.375rem;
+        margin-bottom: 0.75rem;
+    }
+
+    footer {
+        padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    footer > p {
+        font-size: 0.9375rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    footer > p:first-child {
+        font-size: 1.0625rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    footer > div {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .navBar {
+        padding: 1rem 1.5rem;
+    }
+
+    .dropdown button::after {
+        display: none;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.spacedlines {
+    line-height: 2;
+}
+
+.textbox {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.orchestraheader {
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 800;
+    color: #c91c22;
+    letter-spacing: -2px;
+}
+
+center {
+    text-align: center;
+}
+
+/* Legacy support */
+#container {
+    overflow: auto;
+}
+
+#floated {
+    float: left;
+    width: 210px;
 }
