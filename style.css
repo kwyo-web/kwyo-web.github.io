@@ -683,13 +683,13 @@ footer .sponsor-logo {
 }
 
 footer .sponsor-logo:first-of-type {
-    max-width: 300px;
-    max-height: 140px;
+    max-width: 400px;
+    max-height: 200px;
 }
 
 footer .sponsor-logo:last-of-type {
-    max-width: 380px;
-    max-height: 100px;
+    max-width: 400px;
+    max-height: 200px;
 }
 
 footer .sponsor-logo:hover {
@@ -965,13 +965,13 @@ footer .sponsor-logo:hover {
     }
 
     footer .sponsor-logo:first-of-type {
-        max-width: 250px;
-        max-height: 120px;
+        max-width: 300px;
+        max-height: 150px;
     }
 
     footer .sponsor-logo:last-of-type {
-        max-width: 320px;
-        max-height: 85px;
+        max-width: 300px;
+        max-height: 150px;
     }
 
     .content {
