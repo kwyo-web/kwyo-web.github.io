@@ -1026,6 +1026,28 @@ footer .sponsor-logo:hover {
         gap: 2.5rem;
     }
 
+    footer>div.sponsor-logos {
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    footer .sponsor-logo {
+        padding: 1rem;
+        max-width: 80vw !important;
+        max-height: 100px !important;
+    }
+
+    footer .sponsor-logo:first-of-type {
+        max-width: 80vw !important;
+        max-height: 150px !important;
+    }
+
+    footer .sponsor-logo:last-of-type {
+        max-width: 80vw !important;
+        max-height: 100px !important;
+    }
+
     .navBar {
         padding: 1rem 1.5rem;
     }
