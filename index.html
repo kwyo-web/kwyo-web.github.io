@@ -1,16 +1,19 @@
 <html>
-  <head>
-    <title>Kitchener-Waterloo Youth Orchestra Homepage</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <!-- navbar from codepen (licence): 
+
+<head>
+  <title>Kitchener-Waterloo Youth Orchestra Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <!-- navbar from codepen (licence): 
       Copyright (c) 2023 by hanseklev (https://codepen.io/hanseklev/pen/eYJmGbN)
       Fork of an original work Basic Responsive Menu Skeleton (https://codepen.io/GavinMichael/pen/zZejxX
 
@@ -20,43 +23,43 @@
 
       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     -->
-    <div class="nav-container">
-      <nav class="navBar" id="mainNav">
-        <a href="index.html"><img src="static/KWYO_Logo_Red.svg" alt="KWYO Logo"/></a>
-        <!--a href="/auditions">Auditions</a>
+  <div class="nav-container">
+    <nav class="navBar" id="mainNav">
+      <a href="index.html"><img src="static/KWYO_Logo_Red.svg" alt="KWYO Logo" /></a>
+      <!--a href="/auditions">Auditions</a>
         <a href="/events">Events</a>
         <a href="/groups">Groups</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a-->
-        <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()">&#9776;</a>
-        <div class="dropdown">
-            <button>ABOUT</button>
-            <div class="content">
-                <a href="ourjourneyandroots.html">OUR JOURNEY & ROOTS</a>
-                <a href="facultyandstaff.html">FACULTY & ADMINISTRATION</a>
-                <a href="missionandgovernance.html">MISSION & GOVERNANCE</a>
-                <a href="blank.html">POLICIES</a>
-            </div>
+      <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()">&#9776;</a>
+      <div class="dropdown">
+        <button>ABOUT</button>
+        <div class="content">
+          <a href="ourjourneyandroots.html">OUR JOURNEY & ROOTS</a>
+          <a href="facultyandstaff.html">FACULTY & ADMINISTRATION</a>
+          <a href="missionandgovernance.html">MISSION & GOVERNANCE</a>
+          <a href="blank.html">POLICIES</a>
         </div>
-          <div class="dropdown">
-            <button>ORCHESTRAS</button>
-            <div class="content">
-                <a href="preludiumstrings.html">PRELUDIUM STRINGS</a>
-                <a href="youthstrings.html">YOUTH STRINGS</a>
-                <a href="youthsinfonia.html">YOUTH SINFONIA</a>
-                <a href="youthorchestra.html">YOUTH ORCHESTRA</a>
-            </div>
+      </div>
+      <div class="dropdown">
+        <button>ORCHESTRAS</button>
+        <div class="content">
+          <a href="preludiumstrings.html">PRELUDIUM STRINGS</a>
+          <a href="youthstrings.html">YOUTH STRINGS</a>
+          <a href="youthsinfonia.html">YOUTH SINFONIA</a>
+          <a href="youthorchestra.html">YOUTH ORCHESTRA</a>
         </div>
-        <div class="dropdown">
-            <button>AUDITIONS</button>
-            <div class="content">
-                <a href="auditions.html">AUDITION INFORMATION</a>
-                <a href="auditionrequirements.html">AUDITION REQUIREMENTS</a>
-            </div>
+      </div>
+      <div class="dropdown">
+        <button>AUDITIONS</button>
+        <div class="content">
+          <a href="auditions.html">AUDITION INFORMATION</a>
+          <a href="auditionrequirements.html">AUDITION REQUIREMENTS</a>
         </div>
-        <a href="concerts.html" class="nav-link">CONCERTS</a>
-        <a href="support.html" class="nav-link">SUPPORT</a>
-          <!--<div class="dropdown">
+      </div>
+      <a href="concerts.html" class="nav-link">CONCERTS</a>
+      <a href="support.html" class="nav-link">SUPPORT</a>
+      <!--<div class="dropdown">
             <button>SUPPORT</button>
             <div class="content">
                 <a href="blank.html">DONATE</a>
@@ -70,30 +73,35 @@
                 <a href="blank.html">EMPLOYMENT</a>
             </div>
         </div>-->
-      </nav>
-    </div>
-    <div class="banner">
-        <picture>
-          <img src="images/NEW Main Page JOE.jpg" alt="The Kitchener Waterloo Youth Orchestra performing. Photo credit to Joe Petrik.">
-        </picture>
-        <div class="clearbox"></div>
-        <div class="title1">Kitchener-Waterloo</div>
-        <div class="title2">Youth Orchestra</div>
-        <p><em>Photo credit to Joe Petrik.</em></p>
-    </div>
-    
-    <div class="content">
-      <div class="bigmargins">
-        <h1>Welcome to <span class="red">KWYO</span></h1>
-        <p>We are Waterloo Region’s comprehensive orchestral training program, a non-profit continuing a proud legacy that began in 1966. We inspire children and youth ages 6 to 22 to grow through high-standard orchestral instruction and enriching performance experiences in a fun, supportive, and safe environment.</p>
-        <p>KWYO musicians are admitted through an audition process, most of which takes place in late spring <a href="auditions.html">AUDITIONS</a></p>
-        <p>KWYO showcases young musicians’ achievements in concerts, collaborations, and community performances <a href="concerts.html">CONCERTS</a></p>
-        <hr>
-        <!--<p>KWYO is a community based non-for-profit organization committed to supplementing music education by bringing to Waterloo region's youth, ages 5 to 22, a continuity of a high standard orchestral instruction and rewarding performance opportunities in a fun, challenging and safe environment.</p>
+    </nav>
+  </div>
+  <div class="banner">
+    <picture>
+      <img src="images/NEW Main Page JOE.jpg"
+        alt="The Kitchener Waterloo Youth Orchestra performing. Photo credit to Joe Petrik.">
+    </picture>
+    <div class="clearbox"></div>
+    <div class="title1">Kitchener-Waterloo</div>
+    <div class="title2">Youth Orchestra</div>
+    <p><em>Photo credit to Joe Petrik.</em></p>
+  </div>
+
+  <div class="content">
+    <div class="bigmargins">
+      <h1>Welcome to <span class="red">KWYO</span></h1>
+      <p>We are Waterloo Region’s comprehensive orchestral training program, a non-profit continuing a proud legacy that
+        began in 1966. We inspire children and youth ages 6 to 22 to grow through high-standard orchestral instruction
+        and enriching performance experiences in a fun, supportive, and safe environment.</p>
+      <p>KWYO musicians are admitted through an audition process, most of which takes place in late spring <a
+          href="auditions.html">AUDITIONS</a></p>
+      <p>KWYO showcases young musicians’ achievements in concerts, collaborations, and community performances <a
+          href="concerts.html">CONCERTS</a></p>
+      <hr>
+      <!--<p>KWYO is a community based non-for-profit organization committed to supplementing music education by bringing to Waterloo region's youth, ages 5 to 22, a continuity of a high standard orchestral instruction and rewarding performance opportunities in a fun, challenging and safe environment.</p>
       <p>Our mission is to bring together in a creative process of ensemble performance the  music-loving students to empower them to grow and to develop numerous transferable skills needed to thrive as an individual and a team member. KWYO's leading ideas of inclusivity, equality, versatility and accessibility provides paths for nurturing thriving and compassionate community members, arts enthusiasts, as well as professional and community musicians.</p>
       <p>KWYO activities for four orchestras in progressive levels run from September through April, in two Waterloo locations. Please see the details below. Students are accepted via audition. Our live spring auditions have concluded. KWYO still accepts new students through video-auditions and will offer a limited in-person opportunity in early September. We are actively searching for students playing viola, double bass, bassoon, trumpet, French horn and trombone. To register for an audition, for audition requirements and info on video-auditions, and with any other questions contact us at <a href="mailto:kw.community.yo@gmail.com">kw.community.yo@gmail.com</a></p-->
-   
-  <!--  <h1>2024-25 KWYO <span class="red">CONCERTS</span></h1>
+
+      <!--  <h1>2024-25 KWYO <span class="red">CONCERTS</span></h1>
       <p>Join us for performances culminating each term of activities and featuring our four orchestras as well as Youth Orchestra soloists, the annual Concerto Competition winners.</p>
       <p><strong>KWYO Fall Concert</strong>
         <br>
@@ -108,60 +116,54 @@
         116 William St W, Waterloo, N2l 1J3</p>
       <p><i>Admission by donation</i></p>
         <hr> -->
-        <h1 style="text-align: center; margin-top: 4rem;">Our <span class="red">ORCHESTRAS</span></h1>
-        <div class="orchestras-grid">
-          <div class="orchestra-card">
-            <h3><a href="preludiumstrings.html">PRELUDIUM STRINGS</a></h3>
-            <p>Entry level strings orchestra</p>
-          </div>
-
-          <div class="orchestra-card">
-            <h3><a href="youthstrings.html">YOUTH STRINGS</a></h3>
-            <p>Junior level strings orchestra</p>
-          </div>
-
-          <div class="orchestra-card">
-            <h3><a href="youthsinfonia.html">YOUTH SINFONIA</a></h3>
-            <p>Intermediate level string & wind (NEW) orchestra</p>
-          </div>
-
-          <div class="orchestra-card">
-            <h3><a href="youthorchestra.html">YOUTH ORCHESTRA</a></h3>
-            <p>Advanced level symphony orchestra</p>
-          </div>
+      <h1 style="text-align: center; margin-top: 4rem;">Our <span class="red">ORCHESTRAS</span></h1>
+      <div class="orchestras-grid">
+        <div class="orchestra-card">
+          <h3><a href="preludiumstrings.html">PRELUDIUM STRINGS</a></h3>
+          <p>Entry level strings orchestra</p>
         </div>
 
-          </div>
-
+        <div class="orchestra-card">
+          <h3><a href="youthstrings.html">YOUTH STRINGS</a></h3>
+          <p>Junior level strings orchestra</p>
         </div>
 
+        <div class="orchestra-card">
+          <h3><a href="youthsinfonia.html">YOUTH SINFONIA</a></h3>
+          <p>Intermediate level string & wind (NEW) orchestra</p>
+        </div>
+
+        <div class="orchestra-card">
+          <h3><a href="youthorchestra.html">YOUTH ORCHESTRA</a></h3>
+          <p>Advanced level symphony orchestra</p>
+        </div>
       </div>
+
     </div>
-  </body>
-    <footer>
-    <p>Your support helps young musicians achieve their musical and personal goals <a href="support.html">SUPPORT</a></p>
+
+  </div>
+
+  </div>
+  </div>
+  <footer>
+    <p>Your support helps young musicians achieve their musical and personal goals <a href="support.html">SUPPORT</a>
+    </p>
     <p><strong>A heartfelt THANK YOU to our generous supporters for believing in KWYO's mission!</strong></p>
     <div class="sponsor-logos">
       <img src="images/kitchenerlogo.jpg" alt="Kitchener Logo" class="sponsor-logo">
       <img src="images/longandmcquade.png" alt="Long and McQuade Logo" class="sponsor-logo">
     </div>
-    <p>If you have any questions or would like to support our efforts please contact KWYO at <a href="mailto:kw.community.yo@gmail.com">kw.community.yo@gmail.com</a></p>
-    <p class="youtube-link">Please visit KWYO's YouTube channel <a href="https://www.youtube.com/@KW-YouthOrchestra">https://www.youtube.com/@KW-YouthOrchestra</a></p>
-    <p>The Kitchener Waterloo Youth Orchestra acknowledges that we operate on the traditional territory of the Attawandaron (Neutral), Anishinaabeg, and Haudenosaunee peoples. We honor their enduring stewardship of the land and waters, and we are grateful for the knowledge they continue to share. As an organization dedicated to youth, music, and community, we are committed to ongoing learning and supporting reconciliation in meaningful ways.</p>
+    <p>If you have any questions or would like to support our efforts please contact KWYO at <a
+        href="mailto:kw.community.yo@gmail.com">kw.community.yo@gmail.com</a></p>
+    <p class="youtube-link">Please visit KWYO's YouTube channel <a
+        href="https://www.youtube.com/@KW-YouthOrchestra">https://www.youtube.com/@KW-YouthOrchestra</a></p>
+    <p>The Kitchener Waterloo Youth Orchestra acknowledges that we operate on the traditional territory of the
+      Attawandaron (Neutral), Anishinaabeg, and Haudenosaunee peoples. We honor their enduring stewardship of the land
+      and
+      waters, and we are grateful for the knowledge they continue to share. As an organization dedicated to youth,
+      music,
+      and community, we are committed to ongoing learning and supporting reconciliation in meaningful ways.</p>
   </footer>
- <!-- <footer>  
-    <div class="bottom-container">
-        <div class="bottom-nav">
-            <u1>
-                <li><a href="">ABOUT</a></li>
-                <li><a href="">KWYO ORCHESTRAS</a></li>
-                <li><a href="">CONCERTS</a></li>
-                <li><a href="">AUDITIONS</a></li>
-                <li><a href="">SUPPORT</a></li>
-                <li><a href="">CONTACT</a></li>
-            </u1>
-        </div>
-    </div>
-    <a href="https://www.youtube.com/@KW-YouthOrchestra"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/youtube-app-white-icon.png" alt="https://www.youtube.com/@KW-YouthOrchestra" style="width:50px;height:50px;"></a>
-  </footer>-->
+</body>
+
 </html>

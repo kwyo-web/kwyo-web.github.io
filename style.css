@@ -612,6 +612,36 @@ ul li {
 }
 
 /* ============================================
+   VIDEO EMBED - RESPONSIVE & STYLED
+   ============================================ */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 3rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #000;
+    line-height: 0;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+@media screen and (max-width: 900px) {
+    .video-container {
+        border-radius: 12px;
+        margin: 2rem auto;
+    }
+}
+
+/* ============================================
    FOOTER - PROFESSIONAL DESIGN
    ============================================ */
 
@@ -742,7 +772,8 @@ footer .sponsor-logo:hover {
 .center-figure {
     width: 90%;
     max-width: 720px;
-    margin: 2rem auto; /* spacing above and below image */
+    margin: 2rem auto;
+    /* spacing above and below image */
     text-align: center;
 }
 
@@ -762,7 +793,8 @@ footer .sponsor-logo:hover {
 
 @media screen and (min-width: 1400px) {
     .center-figure {
-        max-width: 900px; /* allow larger display on very wide screens */
+        max-width: 900px;
+        /* allow larger display on very wide screens */
     }
 }
 
