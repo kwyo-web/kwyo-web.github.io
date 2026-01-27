@@ -870,6 +870,21 @@ footer .sponsor-logo:hover {
         margin: 0.25rem 0;
     }
 
+    .navBar.responsive .nav-link {
+        display: block !important;
+        width: 100%;
+        padding: 1rem 1.25rem;
+        font-size: 0.9375rem;
+        margin: 0;
+        color: #c91c22;
+        font-weight: 700;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .navBar.responsive .nav-link::after {
+        display: none;
+    }
+
     .navBar.responsive .dropdown button {
         width: 100%;
         text-align: left;
