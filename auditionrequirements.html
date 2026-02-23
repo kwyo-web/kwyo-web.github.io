@@ -1,34 +1,36 @@
 <html>
-  <head>
-    <title>Kitchener Waterloo Youth Orchestra Homepage</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="script.js"></script>
-    <script src="button.js"></script>
-    <script>
+
+<head>
+  <title>Kitchener Waterloo Youth Orchestra Homepage</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="script.js"></script>
+  <script src="button.js"></script>
+  <script>
     // Function to create the plus/minus icon for all buttons
     function addPlusMinusIcons() {
       const buttons = document.querySelectorAll('button.expand-button');
-      
+
       buttons.forEach(button => {
         // Only add if it doesn't already have the icon
         if (!button.querySelector('.icon-container')) {
           const iconContainer = document.createElement('div');
           iconContainer.className = 'icon-container';
-          
+
           const horizontalBar = document.createElement('div');
           horizontalBar.className = 'horizontal-bar';
-          
+
           const verticalBar = document.createElement('div');
           verticalBar.className = 'vertical-bar';
-          
+
           iconContainer.appendChild(horizontalBar);
           iconContainer.appendChild(verticalBar);
-          
+
           button.appendChild(iconContainer);
         }
       });
@@ -38,12 +40,12 @@
     function toggleTextBox(buttonId, textBoxId) {
       const textBox = document.getElementById(textBoxId);
       const button = document.getElementById(buttonId);
-      
+
       if (!textBox || !button) {
         console.error(`Element not found`);
         return;
       }
-      
+
       if (textBox.style.display === "none" || getComputedStyle(textBox).display === "none") {
         textBox.style.display = "block"; // Show the text box
         button.classList.add("active"); // Add active class for minus sign
@@ -54,115 +56,116 @@
     }
 
     // Wait for the DOM to be fully loaded
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       // Add plus/minus icons to all buttons
       addPlusMinusIcons();
-      
+
       // Add event listeners for each button
       const button1 = document.getElementById("button1");
       const button2 = document.getElementById("button2");
       const button3 = document.getElementById("button3");
       const button4 = document.getElementById("button4");
-      
+
       if (button1) {
-        button1.addEventListener("click", function() {
+        button1.addEventListener("click", function () {
           toggleTextBox("button1", "invisible1");
         });
       }
-      
+
       if (button2) {
-        button2.addEventListener("click", function() {
+        button2.addEventListener("click", function () {
           toggleTextBox("button2", "invisible2");
         });
       }
-      
+
       if (button3) {
-        button3.addEventListener("click", function() {
+        button3.addEventListener("click", function () {
           toggleTextBox("button3", "invisible3");
         });
       }
-      
+
       if (button4) {
-        button4.addEventListener("click", function() {
+        button4.addEventListener("click", function () {
           toggleTextBox("button4", "invisible4");
         });
       }
     });
   </script>
-    <style>
-      /* Improved button styles with better animation */
-      button.expand-button {
-        margin-bottom: 0;
-        margin-top: 0;
-        margin-left: 0;
-        font-size: clamp(20px, 2vw, 25px);
-        font-weight: normal;
-        background-color: #f2f2f2;
-        border: none;
-        width: 100%;
-        max-width: 1500px;
-        height: auto;
-        min-height: 50px;
-        text-align: left;
-        padding: 10px 15px;
-        transition: background-color 0.3s ease;
-        position: relative;
-        cursor: pointer;
-      }
+  <style>
+    /* Improved button styles with better animation */
+    button.expand-button {
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: normal;
+      background-color: #f2f2f2;
+      border: none;
+      width: 100%;
+      max-width: 1500px;
+      height: auto;
+      min-height: 50px;
+      text-align: left;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
 
-      button.expand-button:hover {
-        background-color: lightgray;
-      }
+    button.expand-button:hover {
+      background-color: lightgray;
+    }
 
-      /* Icon container with improved positioning */
-      button.expand-button .icon-container {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 18px;
-        height: 18px;
-      }
+    /* Icon container with improved positioning */
+    button.expand-button .icon-container {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+    }
 
-      /* Creating plus symbol with smoother lines */
-      button.expand-button .horizontal-bar, 
-      button.expand-button .vertical-bar {
-        position: absolute;
-        background-color: #333;
-        border-radius: 2px;
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
+    /* Creating plus symbol with smoother lines */
+    button.expand-button .horizontal-bar,
+    button.expand-button .vertical-bar {
+      position: absolute;
+      background-color: #333;
+      border-radius: 2px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
 
-      /* Horizontal bar (present in both + and -) */
-      button.expand-button .horizontal-bar {
-        width: 100%;
-        height: 2px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+    /* Horizontal bar (present in both + and -) */
+    button.expand-button .horizontal-bar {
+      width: 100%;
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-      /* Vertical bar (only in +) */
-      button.expand-button .vertical-bar {
-        width: 2px;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    /* Vertical bar (only in +) */
+    button.expand-button .vertical-bar {
+      width: 2px;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-      /* Animation for the minus state with improved transition */
-      button.expand-button.active .vertical-bar {
-        transform: translateX(-50%) rotate(90deg);
-        opacity: 0;
-      }
+    /* Animation for the minus state with improved transition */
+    button.expand-button.active .vertical-bar {
+      transform: translateX(-50%) rotate(90deg);
+      opacity: 0;
+    }
 
-      /* Optional: Add a subtle rotation to the horizontal bar */
-      button.expand-button.active .horizontal-bar {
-        transform: translateY(-50%) rotate(180deg);
-      }
+    /* Optional: Add a subtle rotation to the horizontal bar */
+    button.expand-button.active .horizontal-bar {
+      transform: translateY(-50%) rotate(180deg);
+    }
   </style>
-  </head>
-  <body>
-    <!-- navbar from codepen (licence): 
+</head>
+
+<body>
+  <!-- navbar from codepen (licence): 
       Copyright (c) 2023 by hanseklev (https://codepen.io/hanseklev/pen/eYJmGbN)
       Fork of an original work Basic Responsive Menu Skeleton (https://codepen.io/GavinMichael/pen/zZejxX
 
@@ -172,44 +175,44 @@
 
       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     -->
-    <div class="nav-container">
-      <nav class="navBar" id="mainNav">
-        <a href="index.html"><img src="static/KWYO_Logo_Red.svg" alt="KWYO Logo"/></a>
-        <!--a href="/auditions">Auditions</a>
+  <div class="nav-container">
+    <nav class="navBar" id="mainNav">
+      <a href="index.html"><img src="static/KWYO_Logo_Red.svg" alt="KWYO Logo" /></a>
+      <!--a href="/auditions">Auditions</a>
         <a href="/events">Events</a>
         <a href="/groups">Groups</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
         <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()"><i class="la la-bars"></i></a-->
-        <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()"><i class="la la-bars"></i></a>
-        <div class="dropdown">
-            <button>ABOUT</button>
-            <div class="content">
-                <a href="ourjourneyandroots.html">OUR JOURNEY & ROOTS</a>
-                <a href="facultyandstaff.html">FACULTY & ADMINISTRATION</a>
-                <a href="missionandgovernance.html">MISSION & GOVERNANCE</a>
-                <a href="blank.html">POLICIES</a>
-            </div>
+      <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()"><i class="la la-bars"></i></a>
+      <div class="dropdown">
+        <button>ABOUT</button>
+        <div class="content">
+          <a href="ourjourneyandroots.html">OUR JOURNEY & ROOTS</a>
+          <a href="facultyandstaff.html">FACULTY & ADMINISTRATION</a>
+          <a href="missionandgovernance.html">MISSION & GOVERNANCE</a>
+          <a href="blank.html">POLICIES</a>
         </div>
-          <div class="dropdown">
-            <button>ORCHESTRAS</button>
-            <div class="content">
-                <a href="preludiumstrings.html">PRELUDIUM STRINGS</a>
-                <a href="youthstrings.html">YOUTH STRINGS</a>
-                <a href="youthsinfonia.html">YOUTH SINFONIA</a>
-                <a href="youthorchestra.html">YOUTH ORCHESTRA</a>
-            </div>
+      </div>
+      <div class="dropdown">
+        <button>ORCHESTRAS</button>
+        <div class="content">
+          <a href="preludiumstrings.html">PRELUDIUM STRINGS</a>
+          <a href="youthstrings.html">YOUTH STRINGS</a>
+          <a href="youthsinfonia.html">YOUTH SINFONIA</a>
+          <a href="youthorchestra.html">YOUTH ORCHESTRA</a>
         </div>
-        <div class="dropdown">
-            <button>AUDITIONS</button>
-            <div class="content">
-                <a href="auditions.html">AUDITION INFORMATION</a>
-                <a href="auditionrequirements.html">AUDITION REQUIREMENTS</a>
-            </div>
+      </div>
+      <div class="dropdown">
+        <button>AUDITIONS</button>
+        <div class="content">
+          <a href="auditions.html">AUDITION INFORMATION</a>
+          <a href="auditionrequirements.html">AUDITION REQUIREMENTS</a>
         </div>
-        <a href="concerts.html" class="nav-link">CONCERTS</a>
-        <a href="support.html" class="nav-link">SUPPORT</a>
-          <!--<div class="dropdown">
+      </div>
+      <a href="concerts.html" class="nav-link">CONCERTS</a>
+      <a href="support.html" class="nav-link">SUPPORT</a>
+      <!--<div class="dropdown">
             <button>SUPPORT</button>
             <div class="content">
                 <a href="blank.html">DONATE</a>
@@ -223,15 +226,16 @@
                 <a href="blank.html">EMPLOYMENT</a>
             </div>
         </div>-->
-      </nav>
-    </div>
-    <div class="banner"> 
-      <img  src="images/Auditions Page JOE.jpg" alt="The Kitchener Waterloo Youth Orchestra performing. Photo credit to Joe Petrik.">
-      <p><em>Photo credit to Joe Petrik.</em></p>
-    </div>
-    <div class="content">
-      <div class="bigmargins">
-      <h1 class="afterimg">KWYO Audition REQUIREMENTS</h1>
+    </nav>
+  </div>
+  <div class="banner">
+    <img src="images/Auditions Page JOE.jpg"
+      alt="The Kitchener Waterloo Youth Orchestra performing. Photo credit to Joe Petrik.">
+    <div class="title1">KWYO Audition REQUIREMENTS</div>
+    <p><em>Photo credit to Joe Petrik.</em></p>
+  </div>
+  <div class="content">
+    <div class="bigmargins">
       <br>
       <hr>
       <p>Audition requirements details are listed under each orchestra and generally include:
@@ -240,7 +244,8 @@
         <li>Solo piece(s)</li>
         <li>Short orchestral excerpts for most orchestras / instruments</li>
       </ul>
-      To prepare orchestral excerpts, we recommend listening to recordings and consulting your private instructor or ensemble leader.
+      To prepare orchestral excerpts, we recommend listening to recordings and consulting your private instructor or
+      ensemble leader.
       </p>
 
       <hr>
@@ -248,25 +253,28 @@
 
       <div id="invisible1" class="text-body" style="display:none;">
 
-      <p>Entry level string orchestra. Suggested minimum age: 6 years old. To join our entry-level string orchestra, a candidate should have been taking private music lessons for about a year and have a basic understanding of music notation. Suggested opening skill level RCM* 1 or its equivalent in Suzuki.</p>
+        <p>Entry level string orchestra. Suggested minimum age: 6 years old. To join our entry-level string orchestra, a
+          candidate should have been taking private music lessons for about a year and have a basic understanding of
+          music notation. Suggested opening skill level RCM* 1 or its equivalent in Suzuki.</p>
 
-      <p><strong style="font-size:23px">Instruments</strong></p>
-      <ul>
-        <li>Violin</li>
-        <li>Viola</li>
-        <li>Cello</li>
-        <li>Double Bass</li>
-      </ul>
+        <p><strong style="font-size:23px">Instruments</strong></p>
+        <ul>
+          <li>Violin</li>
+          <li>Viola</li>
+          <li>Cello</li>
+          <li>Double Bass</li>
+        </ul>
 
-      <p><strong style="font-size:23px">Preludium Strings Audition Requirements</strong></p>
-      <ul>
-        <li>G major or C major scale - 1 or 2 octaves</li>
-        <li>A solo piece of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment</li>
-      </ul>
+        <p><strong style="font-size:23px">Preludium Strings Audition Requirements</strong></p>
+        <ul>
+          <li>G major or C major scale - 1 or 2 octaves</li>
+          <li>A solo piece of the candidate's choice that best demonstrates their current skill level, performed without
+            piano accompaniment</li>
+        </ul>
 
-      <p><em>* Royal Conservatory of Music</em></p>
+        <p><em>* Royal Conservatory of Music</em></p>
 
-    </div>
+      </div>
 
 
       <hr>
@@ -274,40 +282,49 @@
 
       <div id="invisible2" class="text-body" style="display:none;">
 
-      <p>Junior level strings orchestra. Suggested minimum age: 8 years old. Instruments: violin, viola, cello and double bass. Opening skill level RCM* 3 or its equivalent in Suzuki.</p>
+        <p>Junior level strings orchestra. Suggested minimum age: 8 years old. Instruments: violin, viola, cello and
+          double bass. Opening skill level RCM* 3 or its equivalent in Suzuki.</p>
 
-      <p><strong style="font-size:23px">Youth Strings Audition Requirements</strong></p>
+        <p><strong style="font-size:23px">Youth Strings Audition Requirements</strong></p>
 
-      <p><strong style="font-size:23px">Violin</strong></p>
-      <ul>
-        <li>Scales: D major, 2 octaves & C minor, 2 octaves</li>
-        <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Selected Orchestral Excerpts</li>
-        <li>Orchestral Excerpts:  <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions VIOLIN.pdf" target="blank">Youth Strings Auditions VIOLIN</a></li>
-      </ul>
+        <p><strong style="font-size:23px">Violin</strong></p>
+        <ul>
+          <li>Scales: D major, 2 octaves & C minor, 2 octaves</li>
+          <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level,
+            performed without piano accompaniment.</li>
+          <li>Selected Orchestral Excerpts</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions VIOLIN.pdf"
+              target="blank">Youth Strings Auditions VIOLIN</a></li>
+        </ul>
 
-      <p><strong style="font-size:23px">Viola</strong></p>
-      <ul>
-        <li>Scales: C major, 2 octaves & D minor, 1 or 2 octaves</li>
-        <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions VIOLA.pdf" target="blank">Youth Strings Auditions VIOLA</a></li>
-      </ul>
+        <p><strong style="font-size:23px">Viola</strong></p>
+        <ul>
+          <li>Scales: C major, 2 octaves & D minor, 1 or 2 octaves</li>
+          <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level,
+            performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions VIOLA.pdf"
+              target="blank">Youth Strings Auditions VIOLA</a></li>
+        </ul>
 
-      <p><strong style="font-size:23px">Cello</strong></p>
-      <ul>
-        <li>Scales: G major, 2 octaves & D minor, 2 octaves</li>
-        <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions CELLO.pdf" target="blank">Youth Strings Auditions CELLO</a></li>
-      </ul>
+        <p><strong style="font-size:23px">Cello</strong></p>
+        <ul>
+          <li>Scales: G major, 2 octaves & D minor, 2 octaves</li>
+          <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level,
+            performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions CELLO.pdf"
+              target="blank">Youth Strings Auditions CELLO</a></li>
+        </ul>
 
-      <p><strong style="font-size:23px">Double Bass</strong></p>
-      <ul>
-        <li>2 scales of own choice, 1 octave</li>
-        <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions DOUBLE BASS.pdf" target="blank">Youth Strings Auditions DOUBLE BASS</a></li>
-      </ul>
+        <p><strong style="font-size:23px">Double Bass</strong></p>
+        <ul>
+          <li>2 scales of own choice, 1 octave</li>
+          <li>A solo piece of the candidate's choice (1-2 min long) that best demonstrates their current skill level,
+            performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Strings PDFs/Youth Strings Auditions DOUBLE BASS.pdf"
+              target="blank">Youth Strings Auditions DOUBLE BASS</a></li>
+        </ul>
 
-      <p><em>* Royal Conservatory of Music</em></p>
+        <p><em>* Royal Conservatory of Music</em></p>
 
       </div>
 
@@ -317,298 +334,351 @@
 
       <div id="invisible3" class="text-body" style="display:none;">
 
-      <p>Intermediate level string & wind (NEW) orchestra. Suggested minimum age: 10 years old.</p>
+        <p>Intermediate level string & wind (NEW) orchestra. Suggested minimum age: 10 years old.</p>
 
-      <p><strong style="font-size:23px">Instruments:</strong></p>
-      <ul>
-        <li><strong style="font-size:23px">Strings</strong> (violin, viola, cello and double bass)
+        <p><strong style="font-size:23px">Instruments:</strong></p>
         <ul>
-          <li>Opening skill level of RCM Level 5 or its equivalent in Suzuki.</li>
+          <li><strong style="font-size:23px">Strings</strong> (violin, viola, cello and double bass)
+            <ul>
+              <li>Opening skill level of RCM Level 5 or its equivalent in Suzuki.</li>
+            </ul>
+          </li>
+          <li><strong style="font-size:23px">Woodwinds</strong> (flute, oboe, clarinet & bassoon)
+            <ul>
+              <li>Suggested opening skill level of RCM 6 / middle school or secondary school grade 9-10 band experience.
+              </li>
+            </ul>
+          </li>
+          <li><strong style="font-size:23px">Brass</strong> (French horn, trumpet, trombone and tuba)
+            <ul>
+              <li>Suggested opening skill level of RCM 4 / middle school or secondary school grade 9-10 band experience.
+              </li>
+            </ul>
+          </li>
         </ul>
-        </li>
-        <li><strong style="font-size:23px">Woodwinds</strong> (flute, oboe, clarinet & bassoon)
+
+        <p><strong style="font-size:23px">Youth Sinfonia Audition Requirements</strong></p>
+
+        <p><strong style="font-size:23px">Strings</strong></p>
+
+        <p><strong style="font-size:23px">Violin</strong></p>
         <ul>
-          <li>Suggested opening skill level of RCM 6  / middle school or secondary school grade 9-10 band experience.</li>
+          <li>Scales: G major, 3 octaves & C minor, 2 octaves</li>
+          <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions VIOLIN.pdf"
+              target="blank">Youth Sinfonia Auditions VIOLIN</a></li>
         </ul>
-        </li>
-        <li><strong style="font-size:23px">Brass</strong> (French horn, trumpet, trombone and tuba)
+
+        <p><strong style="font-size:23px">Viola</strong></p>
         <ul>
-          <li>Suggested opening skill level of RCM 4  / middle school or secondary school grade 9-10 band experience.</li>
+          <li>Scales: C major, 2 octaves & D minor, 2 octaves</li>
+          <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions VIOLA.pdf"
+              target="blank">Youth Sinfonia Auditions VIOLA</a></li>
         </ul>
-        </li>
-      </ul>
 
-      <p><strong style="font-size:23px">Youth Sinfonia Audition Requirements</strong></p>
-      
-      <p><strong style="font-size:23px">Strings</strong></p>
-
-      <p><strong style="font-size:23px">Violin</strong></p>
-      <ul>
-        <li>Scales: G major, 3 octaves & C minor, 2 octaves</li>
-        <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions VIOLIN.pdf" target="blank">Youth Sinfonia Auditions VIOLIN</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Viola</strong></p>
-      <ul>
-        <li>Scales: C major, 2 octaves & D minor, 2 octaves</li>
-        <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions VIOLA.pdf" target="blank">Youth Sinfonia Auditions VIOLA</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Cello</strong></p>
-      <ul>
-        <li>Scales: D major, 2 octaves & G minor, 2 octaves</li>
-        <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions CELLO.pdf" target="blank">Youth Sinfonia Auditions CELLO</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Double Bass</strong></p>
-      <ul>
-        <li>Scales: D major, 1 octave & E minor, 1 octave</li>
-        <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions DOUBLE BASS.pdf" target="blank">Youth Sinfonia Auditions DOUBLE BASS</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Woodwinds</strong></p>
-
-      <p><strong style="font-size:23px">Flute, Oboe, Clarinet & Bassoon</strong></p>
-      <ul>
-        <li>2 scales of the candidate’s choice, 2 octaves, in any articulation</li>
-        <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment.</li>
+        <p><strong style="font-size:23px">Cello</strong></p>
         <ul>
-          <li>selections can include solo pieces, studies or band / orchestral parts</li>
-          <li>one should be more technical, the other more lyrical</li>
-          <li>1-2 minutes long (or sections of longer pieces)</li>
+          <li>Scales: D major, 2 octaves & G minor, 2 octaves</li>
+          <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions CELLO.pdf"
+              target="blank">Youth Sinfonia Auditions CELLO</a></li>
         </ul>
-      </ul>
 
-      <p><strong style="font-size:23px">Brass</strong></p>
-
-      <p><strong style="font-size:23px">French Horn, Trumpet, Trombone & Tuba</strong></p>
-      <ul>
-        <li>2 scales of the candidate’s choice, 1 octave, in any articulation</li>
-        <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment.</li>
+        <p><strong style="font-size:23px">Double Bass</strong></p>
         <ul>
-          <li>selections can include solo pieces, studies or band / orchestral parts</li>
-          <li>one should be more technical, the other more lyrical</li>
-          <li>1-2 minutes long (or sections of longer pieces)</li>
+          <li>Scales: D major, 1 octave & E minor, 1 octave</li>
+          <li>A solo piece of the candidate's choice (1-2 minutes long, or a section of a longer piece) that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/Youth Sinfonia PDFs/Youth Sinfonia Auditions DOUBLE BASS.pdf"
+              target="blank">Youth Sinfonia Auditions DOUBLE BASS</a></li>
         </ul>
-      </ul>
 
-    </div>
+        <p><strong style="font-size:23px">Woodwinds</strong></p>
+
+        <p><strong style="font-size:23px">Flute, Oboe, Clarinet & Bassoon</strong></p>
+        <ul>
+          <li>2 scales of the candidate’s choice, 2 octaves, in any articulation</li>
+          <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed
+            without piano accompaniment.</li>
+          <ul>
+            <li>selections can include solo pieces, studies or band / orchestral parts</li>
+            <li>one should be more technical, the other more lyrical</li>
+            <li>1-2 minutes long (or sections of longer pieces)</li>
+          </ul>
+        </ul>
+
+        <p><strong style="font-size:23px">Brass</strong></p>
+
+        <p><strong style="font-size:23px">French Horn, Trumpet, Trombone & Tuba</strong></p>
+        <ul>
+          <li>2 scales of the candidate’s choice, 1 octave, in any articulation</li>
+          <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed
+            without piano accompaniment.</li>
+          <ul>
+            <li>selections can include solo pieces, studies or band / orchestral parts</li>
+            <li>one should be more technical, the other more lyrical</li>
+            <li>1-2 minutes long (or sections of longer pieces)</li>
+          </ul>
+        </ul>
+
+      </div>
 
       <hr>
       <button id="button4" class="expand-button">YOUTH ORCHESTRA</button>
 
       <div id="invisible4" class="text-body" style="display:none;">
 
-      <p>Advanced level symphony orchestra. Suggested minimum age: 12 years old.</p>
+        <p>Advanced level symphony orchestra. Suggested minimum age: 12 years old.</p>
 
-      <p><strong style="font-size:23px">Instruments:</strong></p>
-      <ul>
-        <li><strong style="font-size:23px">Strings</strong> (violin, viola, cello, double bass & harp)
+        <p><strong style="font-size:23px">Instruments:</strong></p>
         <ul>
-          <li>Opening skill level of RCM Level 8 or its equivalent in Suzuki.</li>
+          <li><strong style="font-size:23px">Strings</strong> (violin, viola, cello, double bass & harp)
+            <ul>
+              <li>Opening skill level of RCM Level 8 or its equivalent in Suzuki.</li>
+            </ul>
+          </li>
+          <li><strong style="font-size:23px">Woodwinds</strong> (flute / piccolo, oboe, clarinet & bassoon)
+            <ul>
+              <li>Suggested opening skill level of RCM 8 / senior band experience, ideally supplemented by private music
+                lessons.</li>
+            </ul>
+          </li>
+          <li><strong style="font-size:23px">Brass</strong> (French horn, trumpet, trombone and tuba)
+            <ul>
+              <li>Suggested opening skill level of RCM 6 / secondary school grade 11-12 or university band experience,
+                ideally supplemented by private music lessons.</li>
+            </ul>
+          </li>
+          <li><strong style="font-size:23px">Percussion</strong> (timpani, snare drum & xylophone)
+            <ul>
+              <li>Suggested opening skill level of RCM 6 / secondary school grade 11-12 or university band experience,
+                ideally supplemented by private music lessons.</li>
+            </ul>
+          </li>
         </ul>
-        </li>
-        <li><strong style="font-size:23px">Woodwinds</strong> (flute / piccolo, oboe, clarinet & bassoon)
+
+        <p><strong style="font-size:23px">Youth Orchestra Audition Requirements</strong></p>
+
+        <p><strong style="font-size:23px">Strings</strong></p>
+
+        <p><strong style="font-size:23px">Violin</strong></p>
         <ul>
-          <li>Suggested opening skill level of RCM 8 / senior band experience,  ideally supplemented by private music lessons.</li>
+          <li>Scales: one major & one minor, 3 octaves, in 16th notes, 8 per bow, M.M. = 60 and corresponding arpeggios
+          </li>
+          <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions VIOLIN.pdf" target="blank">YO Auditions VIOLIN</a>
+          </li>
         </ul>
-        </li>
-        <li><strong style="font-size:23px">Brass</strong> (French horn, trumpet, trombone and tuba)
+
+        <p><strong style="font-size:23px">Violin - Concertmaster & Leadership Role Audition</strong></p>
         <ul>
-          <li>Suggested opening skill level of RCM 6 / secondary school grade 11-12 or university band experience, ideally supplemented by private music lessons.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions  Concertmaster & Leadership Role.pdf"
+              target="blank">YO Auditions Concertmaster & Leadership Role</a>
+            <ul>
+              <li><strong style="font-size:20px">Candidates must audition in the spring to participate</strong></li>
+              <li>Indicate your intention in your Audition Application.</li>
+              <li>Prepare the additional material required to perform in your violin audition which will be extended to
+                approximately 15 minutes.</li>
+              <li>The second stage of the Concertmaster & Leadership Role auditions is scheduled for early September.
+                Successful candidates will receive additional Stage 2 material before the summer, to be presented in the
+                September audition.</li>
+            </ul>
+          </li>
         </ul>
-        </li>
-        <li><strong style="font-size:23px">Percussion</strong> (timpani, snare drum & xylophone)
+
+        <p><strong style="font-size:23px">Viola</strong></p>
         <ul>
-          <li>Suggested opening skill level of RCM 6 / secondary school grade 11-12 or university band experience, ideally supplemented by private music lessons.</li>
+          <li>Scales and arpeggios: one major & one minor, 2 or 3 octaves</li>
+          <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions VIOLA.pdf" target="blank">YO Auditions VIOLA</a>
+          </li>
         </ul>
-        </li>
-      </ul>
 
-      <p><strong style="font-size:23px">Youth Orchestra Audition Requirements</strong></p>
-      
-      <p><strong style="font-size:23px">Strings</strong></p>
-
-      <p><strong style="font-size:23px">Violin</strong></p>
-      <ul>
-        <li>Scales: one major & one minor, 3 octaves, in 16th notes, 8 per bow, M.M. = 60 and corresponding arpeggios</li>
-        <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions VIOLIN.pdf" target="blank">YO Auditions VIOLIN</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Violin - Concertmaster & Leadership Role Audition</strong></p>
-      <ul>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions  Concertmaster & Leadership Role.pdf" target="blank">YO Auditions Concertmaster & Leadership Role</a>
+        <p><strong style="font-size:23px">Cello</strong></p>
         <ul>
-          <li><strong style="font-size:20px">Candidates must audition in the spring to participate</strong></li>
-          <li>Indicate your intention in your Audition Application.</li>
-          <li>Prepare the additional material required to perform in your violin audition which will be extended to approximately 15 minutes.</li>
-          <li>The second stage of the Concertmaster & Leadership Role auditions is scheduled for early September. Successful candidates will receive additional Stage 2 material before the summer, to be presented in the September audition.</li>
+          <li>Scales and arpeggios: one major & one minor, 2 or 3 octaves</li>
+          <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions CELLO.pdf" target="blank">YO Auditions CELLO</a>
+          </li>
         </ul>
-        </li>
-      </ul>
 
-      <p><strong style="font-size:23px">Viola</strong></p>
-      <ul>
-        <li>Scales and arpeggios: one major & one minor, 2 or 3 octaves</li>
-        <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions VIOLA.pdf" target="blank">YO Auditions VIOLA</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Cello</strong></p>
-      <ul>
-        <li>Scales and arpeggios: one major & one minor, 2 or 3 octaves</li>
-        <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions CELLO.pdf" target="blank">YO Auditions CELLO</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Double Bass</strong></p>
-      <ul>
-        <li>Scales and arpeggios: one major & one minor, 2 octaves</li>
-        <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions DOUBLE BASS.pdf" target="blank">YO Auditions DOUBLE BASS</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Harp</strong></p>
-      <ul>
-        <li>Scales and arpeggios: one major & one minor, 2 or 3 octaves</li>
-        <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions HARP.pdf" target="blank">YO Auditions HARP</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Woodwinds</strong></p>
-
-      <p><strong style="font-size:23px">Flute & Piccolo</strong></p>
-      <p><em>Please indicate in your Audition Application if you plan to audition on piccolo, as well.</em></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 2 or 3 octaves, in contrasting articulation</li>
-        <li>Chromatic scale, 2 or 3 octaves, starting on a note of your choice</li>
-        <li>A solo piece or a study of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions FLUTE & PICCOLO.pdf" target="blank">YO Auditions FLUTE & PICCOLO</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Oboe</strong></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves, in contrasting articulation</li>
-        <li>Chromatic scale, 2 octaves, starting on a note of your choice</li>
-        <li>A solo piece or  study of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions OBOE.pdf" target="blank">YO Auditions OBOE</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Clarinet</strong></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 2 or 3 octaves, in contrasting articulation</li>
-        <li>Chromatic scale, 2 or 3 octaves, starting on a note of your choice</li>
-        <li>A solo piece or a study of the candidate's choice, 2-3 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions CLARINET.pdf" target="blank">YO Auditions CLARINET</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Bassoon</strong></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves, in contrasting articulation</li>
-        <li>Chromatic scale, 2 octaves, starting on a note of your choice</li>
-        <li>A solo piece or a study of the candidate's choice, 1-2 minutes long, or a part of a larger work that best demonstrates their current skill level, performed without piano accompaniment.</li>
-        <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions BASSOON.pdf" target="blank">YO Auditions BASSOON</a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Brass</strong></p>
-
-      <p><strong style="font-size:23px">French Horn</strong></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 1 or 2 octaves</li>
-        <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
-        <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment.</li>
+        <p><strong style="font-size:23px">Double Bass</strong></p>
         <ul>
-          <li>selections can include solo pieces, studies or band / orchestral parts</li>
-          <li>one should be more technical, the other more lyrical</li>
-          <li>1-2 minutes long (or sections of longer pieces)</li>
+          <li>Scales and arpeggios: one major & one minor, 2 octaves</li>
+          <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions DOUBLE BASS.pdf" target="blank">YO Auditions
+              DOUBLE BASS</a></li>
         </ul>
-        <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions FRENCH HORN.pdf" target="blank">YO Auditions FRENCH HORN</a></li>
-      </ul>
 
-      <p><strong style="font-size:23px">Trumpet</strong></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 1 octave, in contrasting articulation</li>
-        <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
-        <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment.</li>
+        <p><strong style="font-size:23px">Harp</strong></p>
         <ul>
-          <li>selections can include solo pieces, studies or band / orchestral parts</li>
-          <li>one should be more technical, the other more lyrical</li>
-          <li>1-2 minutes long (or sections of longer pieces)</li>
+          <li>Scales and arpeggios: one major & one minor, 2 or 3 octaves</li>
+          <li>A solo piece of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions HARP.pdf" target="blank">YO Auditions HARP</a>
+          </li>
         </ul>
-        <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions TRUMPET.pdf" target="blank">YO Auditions TRUMPET</a></li>
-      </ul>
 
-      <p><strong style="font-size:23px">Trombone / Bass Trombone</strong></p>
-      <p><em>Please indicate in your Audition Application if you plan to audition on bass trombone.</em></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 1 or 2 octaves</li>
-        <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
-        <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment.</li>
+        <p><strong style="font-size:23px">Woodwinds</strong></p>
+
+        <p><strong style="font-size:23px">Flute & Piccolo</strong></p>
+        <p><em>Please indicate in your Audition Application if you plan to audition on piccolo, as well.</em></p>
         <ul>
-          <li>selections can include solo pieces, studies or band / orchestral parts</li>
-          <li>one should be more technical, the other more lyrical</li>
-          <li>1-2 minutes long (or sections of longer pieces)</li>
+          <li>2 scales: one major & one minor of the candidate’s choice, 2 or 3 octaves, in contrasting articulation
+          </li>
+          <li>Chromatic scale, 2 or 3 octaves, starting on a note of your choice</li>
+          <li>A solo piece or a study of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions FLUTE & PICCOLO.pdf" target="blank">YO Auditions
+              FLUTE & PICCOLO</a></li>
         </ul>
-        <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions TROMBONE & BASS TROMBONE.pdf" target="blank">YO Auditions TROMBONE & BASS TROMBONE</a></li>
-      </ul>
 
-      <p><strong style="font-size:23px">Tuba</strong></p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 1 octaves</li>
-        <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
-        <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed without piano accompaniment.</li>
+        <p><strong style="font-size:23px">Oboe</strong></p>
         <ul>
-          <li>selections can include solo pieces, studies or band / orchestral parts</li>
-          <li>one should be more technical, the other more lyrical</li>
-          <li>1-2 minutes long (or sections of longer pieces)</li>
+          <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves, in contrasting articulation</li>
+          <li>Chromatic scale, 2 octaves, starting on a note of your choice</li>
+          <li>A solo piece or study of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions OBOE.pdf" target="blank">YO Auditions OBOE</a>
+          </li>
         </ul>
-        <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions TUBA.pdf" target="blank">YO Auditions TUBA</a></li>
-      </ul>
 
-      <p><strong style="font-size:23px">Percussion</strong></p>
-      <p><strong style="font-size:23px">Candidates are required to supply their own mallets and drumsticks</strong></p>
-
-      <p><strong style="font-size:23px">Timpani</strong></p>
-      <ul>
-        <li>Demonstrate Single Stroke Roll to create long sustained sound in a Slow-to-Fast execution</li>
-        <li>A solo piece or a study of candidate's choice (1-2 minutes long) that best demonstrates their current skill level</li>
-        <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions PERCUSSION.pdf" target="blank">YO Auditions PERCUSSION</a></a></li>
-      </ul>
-
-      <p><strong style="font-size:23px">Snare Drum</strong></p>
-      <ul>
-        <li>Demonstrate the two rudiments in a Slow-Fast-Slow execution:
+        <p><strong style="font-size:23px">Clarinet</strong></p>
         <ul>
-          <li>Double Stroke Roll</li>
-          <li>Single Paradiddle</li>
+          <li>2 scales: one major & one minor of the candidate’s choice, 2 or 3 octaves, in contrasting articulation
+          </li>
+          <li>Chromatic scale, 2 or 3 octaves, starting on a note of your choice</li>
+          <li>A solo piece or a study of the candidate's choice, 2-3 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions CLARINET.pdf" target="blank">YO Auditions
+              CLARINET</a></li>
         </ul>
-        </li>
-        <li>A solo piece or a study of candidate's choice (1-2 minutes long) that best demonstrates their current skill level</li>
-      </ul>
 
-      <p><strong style="font-size:23px">Xylophone</strong> (optional)</p>
-      <ul>
-        <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves</li>
-        <li>A solo piece of candidate's choice (1-2 minutes long) that best demonstrates their current skill level</li>
-      </ul>
+        <p><strong style="font-size:23px">Bassoon</strong></p>
+        <ul>
+          <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves, in contrasting articulation</li>
+          <li>Chromatic scale, 2 octaves, starting on a note of your choice</li>
+          <li>A solo piece or a study of the candidate's choice, 1-2 minutes long, or a part of a larger work that best
+            demonstrates their current skill level, performed without piano accompaniment.</li>
+          <li>Orchestral Excerpts: <a href="PDFs/YO PDFs/YO Auditions BASSOON.pdf" target="blank">YO Auditions
+              BASSOON</a></li>
+        </ul>
 
-    </div>
+        <p><strong style="font-size:23px">Brass</strong></p>
+
+        <p><strong style="font-size:23px">French Horn</strong></p>
+        <ul>
+          <li>2 scales: one major & one minor of the candidate’s choice, 1 or 2 octaves</li>
+          <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
+          <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed
+            without piano accompaniment.</li>
+          <ul>
+            <li>selections can include solo pieces, studies or band / orchestral parts</li>
+            <li>one should be more technical, the other more lyrical</li>
+            <li>1-2 minutes long (or sections of longer pieces)</li>
+          </ul>
+          <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions FRENCH HORN.pdf"
+              target="blank">YO Auditions FRENCH HORN</a></li>
+        </ul>
+
+        <p><strong style="font-size:23px">Trumpet</strong></p>
+        <ul>
+          <li>2 scales: one major & one minor of the candidate’s choice, 1 octave, in contrasting articulation</li>
+          <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
+          <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed
+            without piano accompaniment.</li>
+          <ul>
+            <li>selections can include solo pieces, studies or band / orchestral parts</li>
+            <li>one should be more technical, the other more lyrical</li>
+            <li>1-2 minutes long (or sections of longer pieces)</li>
+          </ul>
+          <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions TRUMPET.pdf" target="blank">YO
+              Auditions TRUMPET</a></li>
+        </ul>
+
+        <p><strong style="font-size:23px">Trombone / Bass Trombone</strong></p>
+        <p><em>Please indicate in your Audition Application if you plan to audition on bass trombone.</em></p>
+        <ul>
+          <li>2 scales: one major & one minor of the candidate’s choice, 1 or 2 octaves</li>
+          <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
+          <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed
+            without piano accompaniment.</li>
+          <ul>
+            <li>selections can include solo pieces, studies or band / orchestral parts</li>
+            <li>one should be more technical, the other more lyrical</li>
+            <li>1-2 minutes long (or sections of longer pieces)</li>
+          </ul>
+          <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions TROMBONE & BASS TROMBONE.pdf"
+              target="blank">YO Auditions TROMBONE & BASS TROMBONE</a></li>
+        </ul>
+
+        <p><strong style="font-size:23px">Tuba</strong></p>
+        <ul>
+          <li>2 scales: one major & one minor of the candidate’s choice, 1 octaves</li>
+          <li>Chromatic scale, 1 octave, starting on a note of the candidate’s choice</li>
+          <li>2 contrasting pieces of the candidate's choice that best demonstrates their current skill level, performed
+            without piano accompaniment.</li>
+          <ul>
+            <li>selections can include solo pieces, studies or band / orchestral parts</li>
+            <li>one should be more technical, the other more lyrical</li>
+            <li>1-2 minutes long (or sections of longer pieces)</li>
+          </ul>
+          <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions TUBA.pdf" target="blank">YO
+              Auditions TUBA</a></li>
+        </ul>
+
+        <p><strong style="font-size:23px">Percussion</strong></p>
+        <p><strong style="font-size:23px">Candidates are required to supply their own mallets and drumsticks</strong>
+        </p>
+
+        <p><strong style="font-size:23px">Timpani</strong></p>
+        <ul>
+          <li>Demonstrate Single Stroke Roll to create long sustained sound in a Slow-to-Fast execution</li>
+          <li>A solo piece or a study of candidate's choice (1-2 minutes long) that best demonstrates their current
+            skill level</li>
+          <li>Orchestral Excerpts (RCM 8 - optional): <a href="PDFs/YO PDFs/YO Auditions PERCUSSION.pdf"
+              target="blank">YO Auditions PERCUSSION</a></a></li>
+        </ul>
+
+        <p><strong style="font-size:23px">Snare Drum</strong></p>
+        <ul>
+          <li>Demonstrate the two rudiments in a Slow-Fast-Slow execution:
+            <ul>
+              <li>Double Stroke Roll</li>
+              <li>Single Paradiddle</li>
+            </ul>
+          </li>
+          <li>A solo piece or a study of candidate's choice (1-2 minutes long) that best demonstrates their current
+            skill level</li>
+        </ul>
+
+        <p><strong style="font-size:23px">Xylophone</strong> (optional)</p>
+        <ul>
+          <li>2 scales: one major & one minor of the candidate’s choice, 2 octaves</li>
+          <li>A solo piece of candidate's choice (1-2 minutes long) that best demonstrates their current skill level
+          </li>
+        </ul>
+
+      </div>
 
       <hr>
 
     </div>
-    </div>
-  </body>
-  <footer>
-    <p>Please visit KWYO's YouTube channel:</p>
-    <a href="https://www.youtube.com/@KW-YouthOrchestra">https://www.youtube.com/@KW-YouthOrchestra</a>
-  </footer>
- <!-- <footer>
+  </div>
+</body>
+<footer>
+  <p>Please visit KWYO's YouTube channel:</p>
+  <a href="https://www.youtube.com/@KW-YouthOrchestra">https://www.youtube.com/@KW-YouthOrchestra</a>
+</footer>
+<!-- <footer>
     <div class="bottom-container">
         <div class="bottom-nav">
             <u1>
