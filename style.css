@@ -484,20 +484,24 @@ hr {
    ============================================ */
 
 .orchestras-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.5rem;
     margin: 4rem 0;
 }
 
-@media screen and (max-width: 700px) {
-    .orchestras-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+/* Small screens: stack one card per row (vertical) */
+@media screen and (max-width: 640px) {
+    .orchestra-card {
+        flex-basis: 100%;
+        max-width: none;
     }
 }
 
 .orchestra-card {
+    flex: 1 1 280px;
+    max-width: 420px;
     background: #ffffff;
     padding: 3rem;
     border-radius: 16px;
@@ -1030,7 +1034,6 @@ footer .sponsor-logo:hover {
     }
 
     .orchestras-grid {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
         margin: 2.5rem 0;
     }
